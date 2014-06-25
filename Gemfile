@@ -7,12 +7,15 @@ gem 'rails', '4.0.5'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'unicorn' #Use Unicorn as production web server with Heroku
 end
 
 group :development do
   gem 'sqlite3'
 end
+
+#Specify webserver to use
+gem 'unicorn', group: :production
+gem 'thin', group: :development
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
